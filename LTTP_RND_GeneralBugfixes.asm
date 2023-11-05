@@ -63,6 +63,10 @@ incsrc registers.asm
 incsrc vanillalabels.asm
 incsrc overworldmap.asm ; Overwrites some code in bank $8A
 
+org $9C8000 ; text tables for translation
+incbin "data/i18n_en.bin"
+warnpc $9CF356
+
 org $A08000 ; bank $20
 incsrc itemdowngrade.asm
 incsrc bugfixes.asm
@@ -100,33 +104,42 @@ incsrc roomloading.asm
 incsrc icepalacegraphics.asm
 warnpc $A18000
 
-org $9C8000 ; text tables for translation
-incbin "data/i18n_en.bin"
-warnpc $9CF356
-
 org $A18000 ; static mapping area
 incsrc framehook.asm
 warnpc $A186B0
-
 org $A186B0 ; static mapping area, do not move
 incsrc hud.asm
 warnpc $A18800
-
 org $A18800 ; static mapping area
-
 warnpc $A19000
-
 org $A1A000 ; static mapping area. Referenced by front end. Do not move.
 incsrc invertedstatic.asm
 warnpc $A1A100
-
 org $A1B000
 incsrc failure.asm
 warnpc $A1FF00
-
-
 org $A1FF00 ; static mapping area
 incsrc init.asm
+
+org $A28000
+ItemReceiptGraphicsROM:
+; we need some empty space here so that 0000 can mean nothing
+fillbyte $00 : fill 32
+incbin "data/customitems.4bpp"
+warnpc $A2B000
+org $A2B000
+incsrc itemdatatables.asm ; Statically mapped
+incsrc decompresseditemgraphics.asm
+incsrc newitems.asm
+incsrc utilities.asm
+incsrc inventory.asm
+
+org $A38000
+incsrc stats/credits.asm ; Statically mapped
+incsrc stats/main.asm
+incsrc stats/statConfig.asm
+FontTable:
+incsrc stats/fonttable.asm
 
 org $A48000 ; code bank - PUT NEW CODE HERE
 incsrc glitched.asm
@@ -159,27 +172,13 @@ incsrc hextodec.asm
 incsrc textrenderer.asm
 warnpc $A58000
 
-org $A28000
-ItemReceiptGraphicsROM:
-; we need some empty space here so that 0000 can mean nothing
-fillbyte $00 : fill 32
-incbin "data/customitems.4bpp"
-warnpc $A2B000
-org $A2B000
-incsrc itemdatatables.asm ; Statically mapped
-incsrc decompresseditemgraphics.asm
-incsrc newitems.asm
-incsrc utilities.asm
-incsrc inventory.asm
+org $A88000
+; Key drop, pots
 
-org $A38000
-incsrc stats/credits.asm ; Statically mapped
-incsrc stats/main.asm
-incsrc stats/statConfig.asm
-FontTable:
-incsrc stats/fonttable.asm
+org $AB8000
+incsrc overworldoutlets.asm
 
-org $B08000 ; bank $30
+org $B08000 ; bank #$30
 incsrc tables.asm
 
 org $B48000
@@ -209,10 +208,6 @@ org $B1A000
 GFX_HUD_Items:
 incbin "data/c2807_v4.gfx"
 warnpc $B1A800
-
-org $B1A800
-
-warnpc $B1B000
 
 org $B1B000
 GFX_HUD_Main:
@@ -271,7 +266,6 @@ incsrc data/kanjireplacements.asm ; Overwrites text gfx data and masks in bank $
 org $B28000
 Extra_Text_Table:
 incsrc itemtext.asm
-
 incsrc externalhooks.asm
 ;================================================================================
 org $919100 ; PC 0x89100
@@ -283,11 +277,11 @@ incsrc custompalettes.asm
 warnpc $9BB880
 ;================================================================================
 org $AF8000 ; PC 0x178000
-Static_RNG: ; each line below is 512 bytes of rng
+Static_RNG: ; 4096 bytes of static RNG
 incsrc staticrng.asm
-warnpc $AF8401
+warnpc $AF9000
 ;================================================================================
-org $AF8400
+org $AF9000
 incsrc tournament.asm
 incsrc eventdata.asm
 warnpc $B08000
@@ -298,7 +292,12 @@ warnpc $B08000
 ;$22 Unused
 ;$23 Stats & Credits
 ;$24 Code Bank
+;$26 Reserved for Multiworld Data
+;$27 Reserved for DR
+;$28 Standing Items (Pottery Lottery/Key Drop shuffle)
 ;$29 External hooks (rest of bank not used)
+;$2A Reserved for OWR
+;$2B Outlet Data
 ;$2E Reserved for Tournament Use
 ;$2F Static RNG (rest is reserved for tournament use)
 ;$30 Main Configuration Table

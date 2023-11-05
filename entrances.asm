@@ -222,7 +222,7 @@ AnimatedEntranceFix: ;when an entrance animation tries to start
 		RTL
 	+
 	PLA
-	STA.w CutsceneFlag ;what we wrote over
-	STA.w FreezeSprites ;what we wrote over
-	STA.w SkipOAM ;what we wrote over
+        STA.w CutsceneFlag ;what we wrote over
+        STA.w FreezeSprites ;what we wrote over
+        STA.w SkipOAM ;what we wrote over
 RTL

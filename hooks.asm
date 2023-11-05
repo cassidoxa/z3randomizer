@@ -147,8 +147,27 @@ JSL BonkRecoil
 ;================================================================================
 ; Dungeon Exit Hook
 ;--------------------------------------------------------------------------------
-org $82E21B ; <- 1621B - Bank02.asm : 11211 (STA $040C)
+org $82E21B
 JSL OnDungeonExit : NOP #2
+
+org $82E238
+JSL FindOutletID
+PEA.w NewOutletData>>8
+PLB
+PLB
+
+org $82E241 : LDA.w NewOutletData_vertical_scroll,X
+org $82E24E : LDA.w NewOutletData_horizontal_scroll,X
+org $82E25B : LDA.w NewOutletData_y_coordinate,X
+org $82E260 : LDA.w NewOutletData_x_coordinate,X
+org $82E265 : LDA.w NewOutletData_exit_vram_addr,X
+org $82E281 : LDA.w NewOutletData_camera_trigger_y,X
+org $82E28C : LDA.w NewOutletData_camera_trigger_x,X
+org $82E29C : LDA.w NewOutletData_door_graphic,X
+org $82E2A2 : LDA.w NewOutletData_door_graphic_location,X
+org $82E2AD : LDA.w NewOutletData_overworld_id,X
+org $82E2BA : LDA.w NewOutletData_scroll_mod_y,X
+org $82E2C9 : LDA.w NewOutletData_scroll_mod_x,X
 ;--------------------------------------------------------------------------------
 
 ;================================================================================
