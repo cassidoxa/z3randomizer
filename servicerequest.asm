@@ -121,7 +121,7 @@ PollService:
 			%ServiceRequestVersion()
 		+
 	.done
-	LDA.l #$00 : STA.l RxStatus ; release lock
+	LDA.b #$00 : STA.l RxStatus ; release lock
 	PLP
 	SEC ; mark request as successful
 RTL

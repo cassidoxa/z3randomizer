@@ -1,10 +1,10 @@
 ;================================================================================
 ; Item Tables
 ;--------------------------------------------------------------------------------
-org $B08000 ; bank #$30 ; PC 0x180000 - 0x180006 [encrypted]
+org $B08000 ; bank $30 ; PC 0x180000 - 0x180006 [encrypted]
 HeartPieceIndoorValues:
 HeartPiece_Forest_Thieves:
-	db $17 ; #$17 = Heart Piece
+	db $17 ; $17 = Heart Piece
 HeartPiece_Lumberjack_Tree:
 	db $17
 HeartPiece_Spectacle_Cave:
@@ -23,96 +23,96 @@ HeartPiece_Smith_Pegs:
 org $B08010 ; PC 0x180010 - 0x180017 [encrypted]
 SpriteItemValues:
 RupeeNPC_MoldormCave:
-	db $46 ; #$46 = 300 Rupees
+	db $46 ; $46 = 300 Rupees
 RupeeNPC_NortheastDarkSwampCave:
-	db $46 ; #$46 = 300 Rupees
+	db $46 ; $46 = 300 Rupees
 LibraryItem:
-	db $1D ; #$1D = Book of Mudora
+	db $1D ; $1D = Book of Mudora
 MushroomItem:
-	db $29 ; #$29 = Mushroom
+	db $29 ; $29 = Mushroom
 WitchItem:
-	db $0D ; #$0D = Magic Powder
+	db $0D ; $0D = Magic Powder
 MagicBatItem:
-	db $4E ; #$4E = Half Magic Item (Default) - #$FF = Use Original Logic - See "HalfMagic" Below
+	db $4E ; $4E = Half Magic Item (Default) - $FF = Use Original Logic - See "HalfMagic" Below
 EtherItem:
-	db $10 ; #$10 = Ether Medallion
+	db $10 ; $10 = Ether Medallion
 BombosItem:
-	db $0F ; #$0F = Bombos Medallion
+	db $0F ; $0F = Bombos Medallion
 ;--------------------------------------------------------------------------------
 ; 0x180017 - 0x18001F (unused) [encrypted]
 ;--------------------------------------------------------------------------------
 org $B08020 ; PC 0x180020
 DiggingGameRNG:
-	db $0F ; #$0F = 15 digs (default) (max ~30)
+	db $0F ; $0F = 15 digs (default) (max ~30)
 org $9DFD95 ; PC 0xEFD95
-	db $0F ; #$0F = 15 digs (default) (max ~30)
+	db $0F ; $0F = 15 digs (default) (max ~30)
 org $B08021 ; PC 0x180021
 ChestGameRNG:
-db $00 ; #$00 = 2nd chest (default) - #$01 = 1st chest
+db $00 ; $00 = 2nd chest (default) - $01 = 1st chest
 ;--------------------------------------------------------------------------------
 ;0 = Bombos
 ;1 = Ether
 ;2 = Quake
 org $B08022 ; PC 0x180022
 MireRequiredMedallion:
-db $01 ; #$01 = Ether (default)
+db $01 ; $01 = Ether (default)
 
 org $B08023 ; PC 0x180023
 TRockRequiredMedallion:
-db $02 ; #$02 = Quake (default)
+db $02 ; $02 = Quake (default)
 ;--------------------------------------------------------------------------------
 org $B08024 ; PC 0x180024 - 0x180027
 BigFairyHealth:
-db $A0 ; #$A0 = Refill Health (default) - #$00 = Don't Refill Health
+db $A0 ; $A0 = Refill Health (default) - $00 = Don't Refill Health
 BigFairyMagic:
-db $00 ; #$80 = Refill Magic - #$00 = Don't Refill Magic (default)
+db $00 ; $80 = Refill Magic - $00 = Don't Refill Magic (default)
 SpawnNPCHealth:
-db $A0 ; #$A0 = Refill Health (default) - #$00 = Don't Refill Health
+db $A0 ; $A0 = Refill Health (default) - $00 = Don't Refill Health
 SpawnNPCMagic:
-db $00 ; #$80 = Refill Magic - #$00 = Don't Refill Magic (default)
+db $00 ; $80 = Refill Magic - $00 = Don't Refill Magic (default)
 ;--------------------------------------------------------------------------------
 org $B08028 ; PC 0x180028
 FairySword:
-db $03 ; #$03 = Golden Sword (default)
+db $03 ; $03 = Golden Sword (default)
 
 PedestalMusicCheck:
 ;org $88C435 ; <- 44435 - ancilla_receive_item.asm : 125
-;db $01 ; #$01 = Master Sword (default)
+;db $01 ; $01 = Master Sword (default)
 org $8589B0 ; PC 0x289B0 ; sprite_master_sword.asm : 179
 PedestalSword:
-db $01 ; #$01 = Master Sword (default)
+db $01 ; $01 = Master Sword (default)
 
 org $B08029 ; PC 0x180029 - 0x18002A
 SmithItemMode:
-db $01 ; #$00 = Classic Tempering Process - #$01 = Quick Item Get (default)
+db $01 ; $00 = Classic Tempering Process - $01 = Quick Item Get (default)
 SmithItem:
-db $02 ; #$02 = Tempered Sword (default)
+db $02 ; $02 = Tempered Sword (default)
 org $86B55C ; PC 0x3355C ; sprite_smithy_bros.asm : 634
 SmithSword:
-db $02 ; #$02 = Tempered Sword (default)
+db $02 ; $02 = Tempered Sword (default)
 
 ;--------------------------------------------------------------------------------
 ; 0x18002B- 0x180030 (Unused)
 ;--------------------------------------------------------------------------------
 org $B08031 ; PC 0x180031
 EnableEasterEggs:
-db $00 ; #$00 = Off (default) - #$01 = On
+db $00 ; $00 = Off (default) - $01 = On
 ;--------------------------------------------------------------------------------
 ; 0x180032 (unused)
 ;--------------------------------------------------------------------------------
 org $B08033 ; PC 0x180033
 HeartBeep:
-db $20 ; #$00 = Off - #$20 = Normal (default) - #$40 = Half Speed - #$80 = Quarter Speed
+db $20 ; $00 = Off - $20 = Normal (default) - $40 = Half Speed - $80 = Quarter Speed
 ;--------------------------------------------------------------------------------
 ; 0x180034 - 0x180035 (Unused)
 ;--------------------------------------------------------------------------------
 org $B08036 ; PC 0x180036 - 0x180037
 RupoorDeduction:
-dw $000A ; #$0A - Default (10 decimal)
+dw $000A ; $0A - Default (10 decimal)
 ;--------------------------------------------------------------------------------
 org $B08038 ; PC 0x180038
 LampConeSewers:
-db $01 ; #$00 = Off - #$01 = On (default)
+db $01 ; $00 = Off - $01 = On (default)
 ;--------------------------------------------------------------------------------
 org $308039 ; PC 0x180039
 ItemCounterHUD:
@@ -120,42 +120,42 @@ db $00 ; $00 = Off | $01 = Display TotalItemCounter / TotalItemCount display on 
 ;--------------------------------------------------------------------------------
 org $B0803A ; PC 0x18003A-0x18003C
 MapHUDMode:
-db #$00 ; #$00 = Off (default) - #$01 = Display Dungeon Count w/Map - #$02 = Display Dungeon Count Always
+db $00 ; $00 = Off (default) - $01 = Display Dungeon Count w/Map - $02 = Display Dungeon Count Always
 MapMode:
-db $00 ; #$00 = Always On (default) - #$01 = Require Map Item
+db $00 ; $00 = Always On (default) - $01 = Require Map Item
 CompassMode:
-db $00 ; #$00 = Off (default) - #$01 = Display Dungeon Count w/Compass - #$02 = Display Dungeon Count Always
-       ; #$80 = Move prizes to custom postion - #$40 = Compasses are shuffled and must be obtained to show position if bit on
+db $00 ; $00 = Off (default) - $01 = Display Dungeon Count w/Compass - $02 = Display Dungeon Count Always
+       ; $80 = Move prizes to custom postion - $40 = Compasses are shuffled and must be obtained to show position if bit on
 ;--------------------------------------------------------------------------------
 org $B0803D ; PC 0x18003D
 PersistentFloodgate:
-db $00 ; #$00 = Off (default) - #$01 = On
+db $00 ; $00 = Off (default) - $01 = On
 ;--------------------------------------------------------------------------------
 org $B0803E ; PC 0x18003E (unused)
 ;--------------------------------------------------------------------------------
 org $B0803F ; PC 0x18003F
 HammerableGanon:
-db $00 ; #$00 = Off (default) - #$01 = On
+db $00 ; $00 = Off (default) - $01 = On
 ;--------------------------------------------------------------------------------
 ; 0x180040 - (unused)
 ;--------------------------------------------------------------------------------
 org $B08041 ; PC 0x180041
 AllowSwordlessMedallionUse:
-db $00 ; #$00 = Off (default) - #$01 = Medallion Pads - #$02 = Always
+db $00 ; $00 = Off (default) - $01 = Medallion Pads - $02 = Always
 ;--------------------------------------------------------------------------------
 org $B08042 ; PC 0x180042
 PermitSQFromBosses:
-db $00 ; #$00 = Off (default) - #$01 = On
+db $00 ; $00 = Off (default) - $01 = On
 ;--------------------------------------------------------------------------------
 ; 0x180043 (unused)
 ;--------------------------------------------------------------------------------
 org $B08044 ; PC 0x180044
 AllowHammerTablets:
-db $00 ; #$00 = Off (default) - #$01 = On
+db $00 ; $00 = Off (default) - $01 = On
 ;--------------------------------------------------------------------------------
 org $B0805D ; PC 0x18005D
 AllowHammerEvilBarrierWithFighterSword:
-db $00 ; #$00 = Off (default) - #$01 = On
+db $00 ; $00 = Off (default) - $01 = On
 ;--------------------------------------------------------------------------------
 org $B08045 ; PC 0x180045
 ; display ---edcba a: Small Keys, b: Big Key, c: Map, d: Compass, e: Bosses
@@ -166,29 +166,29 @@ db $00
 ;--------------------------------------------------------------------------------
 org $B08048 ; PC 0x180048
 MenuSpeed:
-db $08 ; #$08 (default) - higher is faster - #$E8 = instant open
+db $08 ; $08 (default) - higher is faster - $E8 = instant open
 org $8DDD9A ; PC 0x6DD9A (equipment.asm:95) ; Menu Down Chime
-db $11 ; #$11 = Vwoop Down (Default) - #$20 = Menu Chime
+db $11 ; $11 = Vwoop Down (Default) - $20 = Menu Chime
 org $8DDF2A ; PC 0x6DF2A (equipment.asm:466) ; Menu Up Chime
-db $12 ; #$12 = Vwoop Up (Default) - #$20 = Menu Chime
+db $12 ; $12 = Vwoop Up (Default) - $20 = Menu Chime
 org $8DE0E9 ; PC 0x6E0E9 (equipment.asm:780) ; Menu Up Chime
-db $12 ; #$12 = Vwoop Up (Default) - #$20 = Menu Chime
+db $12 ; $12 = Vwoop Up (Default) - $20 = Menu Chime
 ;--------------------------------------------------------------------------------
 org $B08049 ; PC 0x180049
 MenuCollapse:
-db $00 ; #$00 = Press Start (default) - #$10 = Release Start
+db $00 ; $00 = Press Start (default) - $10 = Release Start
 ;--------------------------------------------------------------------------------
 org $B0804A ; PC 0x18004A
 InvertedMode:
-db $00 ; #$00 = Normal (default) - #$01 = Inverted
+db $00 ; $00 = Normal (default) - $01 = Inverted
 ;--------------------------------------------------------------------------------
 org $B0804B ; PC 0x18004B
 QuickSwapFlag:
-db $00 ; #$00 = Off (default) - #$01 = On
+db $00 ; $00 = Off (default) - $01 = On
 ;--------------------------------------------------------------------------------
 org $B0804C ; PC 0x18004C
 SmithTravelsFreely:
-db $00 ; #$00 = Off (default) - #$01 = On (frog/smith can enter multi-entrance doors)
+db $00 ; $00 = Off (default) - $01 = On (frog/smith can enter multi-entrance doors)
 ;--------------------------------------------------------------------------------
 org $B0804D ; PC 0x18004D
 EscapeAssist: ; ScrubMode:
@@ -208,7 +208,7 @@ db $00
 ;--------------------------------------------------------------------------------
 org $B0804F ; PC 0x18004F
 ByrnaInvulnerability:
-db $01 ; #$00 = Off - #$01 = On (default)
+db $01 ; $00 = Off - $01 = On (default)
 ;--------------------------------------------------------------------------------
 org $B08050 ; PC 0x180050 - 0x18005C
 CrystalPendantFlags_2:
@@ -324,9 +324,9 @@ db $46
 ;--------------------------------------------------------------------------------
 org $B08084 ; PC 0x180084 - 0x180085
 PotionHealthRefill:
-db $A0 ; #$A0 - Full Refill (Default)
+db $A0 ; $A0 - Full Refill (Default)
 PotionMagicRefill:
-db $80 ; #$80 - Full Refill (Default)
+db $80 ; $80 - Full Refill (Default)
 ;--------------------------------------------------------------------------------
 org $B08086 ; PC 0x180086
 GanonAgahRNG:
@@ -338,41 +338,41 @@ dw $0000 ; $0000 = not encrypted, $0001 = encrypted with static key, $0002 = Enc
 ;--------------------------------------------------------------------------------
 org $B08089 ; PC 0x180089
 TurtleRockAutoOpenFix:
-db $00 ; #$00 - Normal, #$01 - Open TR Entrance if exiting from it
+db $00 ; $00 - Normal, $01 - Open TR Entrance if exiting from it
 ;--------------------------------------------------------------------------------
 org $B0808A ; PC 0x18008A
 BlockCastleDoorsInRain:
-db $00 ; #$00 - Normal, $01 - Block them (Used by Entrance Rando in Standard Mode)
+db $00 ; $00 - Normal, $01 - Block them (Used by Entrance Rando in Standard Mode)
 ;--------------------------------------------------------------------------------
 ; 0x18008B-0x18008D (unused)
 ;--------------------------------------------------------------------------------
 org $B0808E ; PC 0x18008E
 FakeBoots:
-db $00 ; #$00 = Off (default) - #$01 = On
+db $00 ; $00 = Off (default) - $01 = On
 ;--------------------------------------------------------------------------------
 ; 0x18008F (unused)
 ;--------------------------------------------------------------------------------
 org $B08090 ; PC 0x180090 - 0x180097
 ProgressiveSwordLimit:
-db $04 ; #$04 - 4 Swords (default)
+db $04 ; $04 - 4 Swords (default)
 ProgressiveSwordReplacement:
-db $47 ; #$47 - 20 Rupees (default)
+db $47 ; $47 - 20 Rupees (default)
 ProgressiveShieldLimit:
-db $03 ; #$03 - 3 Shields (default)
+db $03 ; $03 - 3 Shields (default)
 ProgressiveShieldReplacement:
-db $47 ; #$47 - 20 Rupees (default)
+db $47 ; $47 - 20 Rupees (default)
 ProgressiveArmorLimit:
-db $02 ; #$02 - 2 Armors (default)
+db $02 ; $02 - 2 Armors (default)
 ProgressiveArmorReplacement:
-db $47 ; #$47 - 20 Rupees (default)
+db $47 ; $47 - 20 Rupees (default)
 BottleLimit:
-db $04 ; #$04 - 4 Bottles (default)
+db $04 ; $04 - 4 Bottles (default)
 BottleLimitReplacement:
-db $47 ; #$47 - 20 Rupees (default)
+db $47 ; $47 - 20 Rupees (default)
 ProgressiveBowLimit:
-db $02 ; #$02 - 2 Bows (default)
+db $02 ; $02 - 2 Bows (default)
 ProgressiveBowReplacement:
-db $47 ; #$47 - 20 Rupees (default)
+db $47 ; $47 - 20 Rupees (default)
 ;--------------------------------------------------------------------------------
 ; 0x18009A - 0x18009C one mind
 ;--------------------------------------------------------------------------------
@@ -396,15 +396,15 @@ db $01
 ;--------------------------------------------------------------------------------
 org $B080A0 ; PC 0x1800A0 - 0x1800A4
 Bugfix_MirrorlessSQToLW:
-db $01 ; #$00 = Original Behavior - #$01 = Randomizer Behavior (Default)
+db $01 ; $00 = Original Behavior - $01 = Randomizer Behavior (Default)
 Bugfix_SwampWaterLevel:
-db $01 ; #$00 = Original Behavior - #$01 = Randomizer Behavior (Default)
+db $01 ; $00 = Original Behavior - $01 = Randomizer Behavior (Default)
 Bugfix_PreAgaDWDungeonDeathToFakeDW:
-db $01 ; #$00 = Original Behavior - #$01 = Randomizer Behavior (Default)
+db $01 ; $00 = Original Behavior - $01 = Randomizer Behavior (Default)
 Bugfix_SetWorldOnAgahnimDeath:
-db $01 ; #$00 = Original Behavior - #$01 = Randomizer Behavior (Default)
+db $01 ; $00 = Original Behavior - $01 = Randomizer Behavior (Default)
 Bugfix_PodEG:
-db $01 ; #$00 = Original Behavior - #$01 = Randomizer Behavior (Default)
+db $01 ; $00 = Original Behavior - $01 = Randomizer Behavior (Default)
 ;--------------------------------------------------------------------------------
 ; 0x1800A5 - 0x1800AF (unused)
 ;--------------------------------------------------------------------------------
@@ -439,26 +439,26 @@ ShovelSpawnTable:
 ;--------------------------------------------------------------------------------
 org $898B7C ; PC 0x48B7C
 EtherTablet:
-	db $10 ; #$10 = Ether
+	db $10 ; $10 = Ether
 org $88CAA9 ; PC 0x44AA9
-	db $10 ; #$10 = Ether
+	db $10 ; $10 = Ether
 
 org $898B81 ; PC 0x48B81
 BombosTablet:
-	db $0F ; #$0F = Bombos
+	db $0F ; $0F = Bombos
 org $88CAAE ; PC 0x44AAE
-	db $0F ; #$0F = Bombos
+	db $0F ; $0F = Bombos
 ;--------------------------------------------------------------------------------
-org $85FBD2 ; PC 0x2FBD2 - sprite_mad_batter.asm:209 - (#$01)
+org $85FBD2 ; PC 0x2FBD2 - sprite_mad_batter.asm:209 - ($01)
 HalfMagic:
-db $01 ; #$01 = 1/2 Magic (default) - #$02 = 1/4 Magic
+db $01 ; $01 = 1/2 Magic (default) - $02 = 1/4 Magic
 ;--------------------------------------------------------------------------------
 org $87ADA7 ; PC 0x3ADA7 - Bank07.asm:7216 - (db 4, 8, 8)
 CapeMagicUse:
 db $04, $08, $10 ; change to db $04, $08, $08 for original cape behavior
 org $88DC42 ; PC 0x45C42 - ancilla_cane_spark.asm:200 - (db 4, 2, 1)
 ByrnaMagicUsage:
-db $04, #$02, #$01 ; normal, 1/2, 1/4 magic
+db $04, $02, $01 ; normal, 1/2, 1/4 magic
 ;--------------------------------------------------------------------------------
 ;Dungeon Music
 ;org $82D592 ; PC 0x15592
@@ -486,10 +486,10 @@ db $11, $11, $11, $11
 org $82D592+$33
 Music_Hera:
 db $11
-org $82907A ; 0x1107A - Bank02.asm:3089 (#$11)
+org $82907A ; 0x1107A - Bank02.asm:3089 ($11)
 Music_Hera2:
 db $11
-org $828B8C ; 0x10B8C - Bank02.asm:2231 (#$11)
+org $828B8C ; 0x10B8C - Bank02.asm:2231 ($11)
 Music_Hera3:
 db $11
 
@@ -565,47 +565,47 @@ dw $0191
 ;Map Pendant / Crystal Indicators - DEPRECATED in favor of WorldMapIcon_tile, don't use
 
 org $8ABF2E ; PC 0x53F02
-dw $0100 ; #$6234 - Master Sword
+dw $0100 ; $6234 - Master Sword
 
 org $8ABEF8 ; PC 0x53EF8
 MapObject_Eastern:
-dw $6238 ; #$6038 - Green Pendant / Courage
+dw $6238 ; $6038 - Green Pendant / Courage
 
 org $8ABF1C ; PC 0x53F1C
 MapObject_Desert:
-dw $6034 ; #$6034 - Blue Pendant / Power
+dw $6034 ; $6034 - Blue Pendant / Power
 
 org $8ABF0A ; PC 0x53F0A
 MapObject_Hera:
-dw $6032 ; #$6032 - Red Pendant / Wisdom
+dw $6032 ; $6032 - Red Pendant / Wisdom
 
 org $8ABF00 ; PC 0x53F00
 MapObject_Darkness:
-dw $6434 ; #6434 - Crystal
+dw $6434 ; 6434 - Crystal
 
 org $8ABF6C ; PC 0x53F6C
 MapObject_Swamp:
-dw $6434 ; #6434 - Crystal
+dw $6434 ; 6434 - Crystal
 
 org $8ABF12 ; PC 0x53F12
 MapObject_Skull:
-dw $6434 ; #6434 - Crystal
+dw $6434 ; 6434 - Crystal
 
 org $8ABF36 ; PC 0x53F36
 MapObject_Thieves:
-dw $6434 ; #6434 - Crystal
+dw $6434 ; 6434 - Crystal
 
 org $8ABF5A ; PC 0x53F5A
 MapObject_Ice:
-dw $6432 ; #6434 - Crystal 5/6
+dw $6432 ; 6434 - Crystal 5/6
 
 org $8ABF48 ; PC 0x53F48
 MapObject_Mire:
-dw $6432 ; #6434 - Crystal 5/6
+dw $6432 ; 6434 - Crystal 5/6
 
 org $8ABF24 ; PC 0x53F24
 MapObject_TRock:
-dw $6434 ; #6434 - Crystal
+dw $6434 ; 6434 - Crystal
 
 ;--------------------------------------------------------------------------------
 org $82A09B ; PC 0x1209B - Bank02.asm:5802 - (pool MilestoneItem_Flags:)
@@ -705,7 +705,7 @@ db $FF ; no substitution
 ;--------------------------------------------------------------------------------
 ;org $88D01A ; PC 0x4501A - ancilla_flute.asm - 42
 ;OldHauntedGroveItem:
-;	db $14 ; #$14 = Flute
+;	db $14 ; $14 = Flute
 ;--------------------------------------------------------------------------------
 ;2B:Bottle Already Filled w/ Red Potion
 ;2C:Bottle Already Filled w/ Green Potion
@@ -715,10 +715,10 @@ db $FF ; no substitution
 ;48:Bottle Already Filled w/ Gold Bee
 org $86C8FF ; PC 0x348FF
 WaterfallPotion: ; <-------------------------- FAIRY POTION STUFF HERE
-	db $2C ; #$2C = Green Potion
+	db $2C ; $2C = Green Potion
 org $86C93B ; PC 0x3493B
 PyramidPotion:
-	db $2C ; #$2C = Green Potion
+	db $2C ; $2C = Green Potion
 ;--------------------------------------------------------------------------------
 org $B08140 ; PC 0x180140 - 0x18014A [encrypted]
 HeartPieceOutdoorValues:
@@ -743,14 +743,14 @@ HeartPiece_Digging:
 HeartPiece_Zora:
 	db $17
 HauntedGroveItem:
-	db $14 ; #$14 = Flute
+	db $14 ; $14 = Flute
 ;--------------------------------------------------------------------------------
 ; 0x18014B - 0x18014F (unused) [encrypted]
 ;================================================================================
 org $B08150 ; PC 0x180150 - 0x180159 [encrypted]
 HeartContainerBossValues:
 HeartContainer_ArmosKnights:
-	db $3E ; #$3E = Boss Heart (putting pendants here causes main pendants to not drop for obvious (in retrospect) reasons)
+	db $3E ; $3E = Boss Heart (putting pendants here causes main pendants to not drop for obvious (in retrospect) reasons)
 HeartContainer_Lanmolas:
 	db $3E
 HeartContainer_Moldorm:
@@ -774,29 +774,29 @@ HeartContainer_Trinexx:
 ;================================================================================
 org $B08160 ; PC 0x180160 - 0x180162
 BonkKey_Desert:
-	db $24 ; #$24 = Small Key (default)
+	db $24 ; $24 = Small Key (default)
 BonkKey_GTower:
-	db $24 ; #$24 = Small Key (default)
+	db $24 ; $24 = Small Key (default)
 StandingKey_Hera:
-	db $24 ; #$24 = Small Key (default)
+	db $24 ; $24 = Small Key (default)
 ;--------------------------------------------------------------------------------
 ; 0x180163 - 0x180164 (unused)
 ;================================================================================
 org $B08165 ; PC 0x180165
 GoalItemIcon:
-dw $280E ; #$280D = Star - #$280E = Triforce Piece (default)
+dw $280E ; $280D = Star - $280E = Triforce Piece (default)
 ;================================================================================
 org $B08167 ; PC 0x180167-0x180167
 GoalItemRequirement:
-dw $0000 ; #$0000 = Off (default) - #$XXXX = Require $XX Goal Items - #$FFFF = Counter-Only
+dw $0000 ; $0000 = Off (default) - $XXXX = Require $XX Goal Items - $FFFF = Counter-Only
 ;================================================================================
 org $B08169 ; PC 0x180169
 AgahnimDoorStyle:
-db $01 ; #00 = Never Locked - #$01 = Locked During Escape (default) - #$02 = Locked Without 7 Crystals
+db $01 ; 00 = Never Locked - $01 = Locked During Escape (default) - $02 = Locked Without 7 Crystals
 ;================================================================================
 org $B0816A ; PC 0x18016A
 FreeItemText:
-db $00 ; #00 = Off (default)
+db $00 ; 00 = Off (default)
 ;--po bmcs
 ;p - enabled for non-prize crystals
 ;o - enabled for outside dungeon items
@@ -807,67 +807,67 @@ db $00 ; #00 = Off (default)
 ;================================================================================
 org $B0816B ; PC 0x18016B - 0x18016D
 HardModeExclusionCaneOfByrnaUsage:
-db $04, #$02, #$01 ; Normal, 1/2, 1/4 Magic
+db $04, $02, $01 ; Normal, 1/2, 1/4 Magic
 org $B0816E ; PC 0x18016E - 308170
 HardModeExclusionCapeUsage:
-db $04, #$08, #$10 ; Normal, 1/2, 1/4 Magic
+db $04, $08, $10 ; Normal, 1/2, 1/4 Magic
 ;================================================================================
 org $B08171 ; PC 0x180171
 GanonPyramidRespawn:
-db $01 ; #00 = Do not respawn on Pyramid after Death - #$01 = Respawn on Pyramid after Death (default)
+db $01 ; 00 = Do not respawn on Pyramid after Death - $01 = Respawn on Pyramid after Death (default)
 ;================================================================================
 org $B08172 ; PC 0x180172
 GenericKeys:
-db $00 ; #00 = Dungeon-Specific Keys (Default) - #$01 = Generic Keys
+db $00 ; 00 = Dungeon-Specific Keys (Default) - $01 = Generic Keys
 ;================================================================================
 org $B08173 ; PC 0x180173
 Bob:
-db $01 ; #00 = Off - #$01 = On (Default)
+db $01 ; 00 = Off - $01 = On (Default)
 ;================================================================================
 org $B08174 ; PC 0x180174
 ; Flag to fix Fake Light World/Fake Dark World as caused by leaving the underworld
 ; to the other world (As can be caused by EG, Certain underworld clips, or Entance Randomizer).
 ; Currently, Fake Worlds triggered by other causes like YBA's Fake Flute, are not affected.
 FixFakeWorld:
-db $01 ; #00 = Fix Off (Default) - #$01 = Fix On
+db $01 ; 00 = Fix Off (Default) - $01 = Fix On
 ;================================================================================
 org $B08175 ; PC 0x180175 - 0x180179
 ArrowMode:
-db $00 ; #00 = Normal (Default) - #$01 = Rupees
+db $00 ; 00 = Normal (Default) - $01 = Rupees
 ArrowModeWoodArrowCost: ; keep these together
-dw $000A ; #$000A = 10 (Default)
+dw $000A ; $000A = 10 (Default)
 ArrowModeSilverArrowCost: ; keep these together
-dw $0032 ; #$0032 = 50 (Default)
+dw $0032 ; $0032 = 50 (Default)
 ;================================================================================
-org $B0817A ; PC 0x18017A ; #$2000 for Eastern Palace
+org $B0817A ; PC 0x18017A ; $2000 for Eastern Palace
 MapReveal_Sahasrahla:
 dw $0000
-org $B0817C ; PC 0x18017C ; #$0140 for Ice Palace and Misery Mire
+org $B0817C ; PC 0x18017C ; $0140 for Ice Palace and Misery Mire
 MapReveal_BombShop:
 dw $0000
 ;================================================================================
 org $B0817E ; PC 0x18017E
 Restrict_Ponds:
-db $01 ; #$00 = Original Behavior - #$01 - Restrict to Bottles (Default)
+db $01 ; $00 = Original Behavior - $01 - Restrict to Bottles (Default)
 ;================================================================================
 org $B0817F ; PC 0x18017F
 DisableFlashing:
-db $00 ; #$00 = Flashing Enabled (Default) - #$01 = Flashing Disabled
+db $00 ; $00 = Flashing Enabled (Default) - $01 = Flashing Disabled
 ;================================================================================
 ;---- --hb
 ;h - Hookshot
 ;b - Boomerang
 org $B08180 ; PC 0x180180
 StunItemAction:
-db $03 ; #$03 = Hookshot and Boomerang (Default)
+db $03 ; $03 = Hookshot and Boomerang (Default)
 ;================================================================================
 org $B08181 ; PC 0x180181
 SilverArrowsUseRestriction:
-db $00 ; #$00 = Off (Default) - #$01 = Only At Ganon
+db $00 ; $00 = Off (Default) - $01 = Only At Ganon
 ;================================================================================
 org $B08182 ; PC 0x180182
 SilverArrowsAutoEquip:
-db $01 ; #$00 = Off - #$01 = Collection Time (Default) - #$02 = Entering Ganon - #$03 = Collection Time & Entering Ganon
+db $01 ; $00 = Off - $01 = Collection Time (Default) - $02 = Entering Ganon - $03 = Collection Time & Entering Ganon
 ;================================================================================
 org $B08183 ; PC 0x180183
 FreeUncleItemAmount:
@@ -898,23 +898,23 @@ db $00
 ;================================================================================
 org $B08190 ; PC 0x180190 - 0x180192
 TimerStyle:
-db $00 ; #$00 = Off (Default) - #$01 Countdown - #$02 = Stopwatch
+db $00 ; $00 = Off (Default) - $01 Countdown - $02 = Stopwatch
 TimeoutBehavior:
-db $00 ; #$00 = DNF (Default) - #$01 = Sign Change (Requires TimerRestart == 1) - #$02 = OHKO - #$03 = End Game
+db $00 ; $00 = DNF (Default) - $01 = Sign Change (Requires TimerRestart == 1) - $02 = OHKO - $03 = End Game
 TimerRestart:
-db $00 ; #$00 = Locked (Default) - #$01 = Restart
+db $00 ; $00 = Locked (Default) - $01 = Restart
 ;--------------------------------------------------------------------------------
 org $B08193 ; PC 0x180193
 ServerRequestMode:
-db $00 ; #$00 = Off (Default) - #$01 = Synchronous - #$02 = Asychronous
+db $00 ; $00 = Off (Default) - $01 = Synchronous - $02 = Asychronous
 ;---------------------------------------------------------------------------------
 org $B08194 ; PC 0x180194
 TurnInGoalItems:
-db $01 ; #$00 = Instant win if last goal item collected. $01 = (Default) must turn in goal items
+db $01 ; $00 = Instant win if last goal item collected. $01 = (Default) must turn in goal items
 ;--------------------------------------------------------------------------------
 org $B08195 ; PC 0x180195
 ByrnaCaveSpikeDamage:
-db $08 ; #$08 = 1 Heart (default) - #$02 = 1/4 Heart
+db $08 ; $08 = 1 Heart (default) - $02 = 1/4 Heart
 ;--------------------------------------------------------------------------------
 org $B08196     ; PC 0x180196-0x180197
 TotalItemCount: ; Total item count for HUD. Only counts items that use "item get" animation.
@@ -938,28 +938,28 @@ dw CrystalCounter       ; Target address for ped pull check
 GanonVulnerableTarget:  ; 0x1801A6-0x1801A7
 dw $0007                ; Target amount for Ganon vulnerability modes to compare
 GanonVulnerableMode:    ; 0x1801A8-0x1801A9
-dw $0000                ; #$00 = Off (default)
-                        ; #$01 = On
-                        ; #$02 = Require All Dungeons
-                        ; #$03 = Require "GanonVulnerableTarget" Crystals and Aga2
-                        ; #$04 = Require "GanonVulnerableTarget" Crystals
-                        ; #$05 = Require "GoalItemRequirement" Goal Items
-                        ; #$06 = Light Speed
-                        ; #$07 = Require All Crystals and Crystal Bosses
-                        ; #$08 = Require All Crystal Bosses only
-                        ; #$09 = Require All Dungeons No Agahnim
-                        ; #$0A = Require 100% Item Collection
-                        ; #$0B = Require 100% Item Collection and All Dungeons
+dw $0000                ; $00 = Off (default)
+                        ; $01 = On
+                        ; $02 = Require All Dungeons
+                        ; $03 = Require "GanonVulnerableTarget" Crystals and Aga2
+                        ; $04 = Require "GanonVulnerableTarget" Crystals
+                        ; $05 = Require "GoalItemRequirement" Goal Items
+                        ; $06 = Light Speed
+                        ; $07 = Require All Crystals and Crystal Bosses
+                        ; $08 = Require All Crystal Bosses only
+                        ; $09 = Require All Dungeons No Agahnim
+                        ; $0A = Require 100% Item Collection
+                        ; $0B = Require 100% Item Collection and All Dungeons
 ;--------------------------------------------------------------------------------
 ; 0x18019A - 0x1801FF (unused)
 ;================================================================================
 org $B08200 ; PC 0x180200 - 0x18020B
 RedClockAmount:
-dw $4650, #$0000 ; $00004650 = +5 minutes
+dw $4650, $0000 ; $00004650 = +5 minutes
 BlueClockAmount:
-dw $B9B0, #$FFFF ; $FFFFB9B0 = -5 minutes
+dw $B9B0, $FFFF ; $FFFFB9B0 = -5 minutes
 GreenClockAmount:
-dw $0000, #$0000
+dw $0000, $0000
 ;--------------------------------------------------------------------------------
 ; 0x18020C-0x18020F (unused)
 ;--------------------------------------------------------------------------------
@@ -969,7 +969,7 @@ db $E4 ; Hera Basement Key (Set to programmable HP $EB) (set to $E4 for original
 ;================================================================================
 org $B08210 ; PC 0x180210
 RandomizerSeedType:
-db $00 ; #$00 = Casual (default) - #$01 = Glitched - #$02 = Speedrunner - #$A0 = Super Metroid Combo - #$FF = Not Randomizer
+db $00 ; $00 = Casual (default) - $01 = Glitched - $02 = Speedrunner - $A0 = Super Metroid Combo - $FF = Not Randomizer
 ;--------------------------------------------------------------------------------
 org $B08211 ; PC 0x180211
 GameType:
@@ -978,7 +978,7 @@ GameType:
 ;i - item randomization
 ;d - door/entrance randomization
 ;n - enemy randomization
-db $00 ; #$00 = Not Randomized (default)
+db $00 ; $00 = Not Randomized (default)
 ;--------------------------------------------------------------------------------
 ;dgGe mutT
 ;d - Nonstandard Dungeon Configuration (Not Map/Compass/BigKey/SmallKeys in same quantity as vanilla)
@@ -996,9 +996,9 @@ db $00
 ;--------------------------------------------------------------------------------
 org $B08213 ; PC 0x180213
 TournamentSeed:
-db $00 ; #$00 = Off (default) - #$01 = On
+db $00 ; $00 = Off (default) - $01 = On
 TournamentSeedInverse:
-db $01 ; #$00 = On - #$01 = Off (Default)
+db $01 ; $00 = On - $01 = Off (Default)
 ;--------------------------------------------------------------------------------
 org $B08215 ; PC 0x180215
 SeedHash:
@@ -1012,7 +1012,7 @@ FastFanfare:
 db $00 ; $00 = Normal fanfare (default) $01 = Fast fanfare
 org $B0821C ; PC 0x18021C
 MSUResumeType:
-db $01 ; Type of tracks to resume #$00 = Everything - #$01 = Overworld (default)
+db $01 ; Type of tracks to resume $00 = Everything - $01 = Overworld (default)
 org $B0821D ; PC 0x18021D
 MSUResumeTimer:
 dw $0708 ; Number of frames on a different track until we no longer resume (0x708 = 1800 = ~30s)
@@ -1422,24 +1422,24 @@ db $04
 ;================================================================================
 ;;Residual Portal
 ;org $8283E0 ; PC 0x103E0 (Bank02.asm:816) (BNE)
-;db $F0 ; #$D0 - Light Only (Default), #$F0 - Dark Only
+;db $F0 ; $D0 - Light Only (Default), $F0 - Dark Only
 ;org $82B34D ; PC 0x1334D (Bank02.asm:7902) (BNE)
-;db $F0 ; #$D0 - Light Only (Default), #$F0 - Dark Only
+;db $F0 ; $D0 - Light Only (Default), $F0 - Dark Only
 ;org $86DB78 ; PC 0x35B78 (Bank06.asm:2186) ($24)
-;db $8B ; #$24 - Light Style, #$8B - Dark Style
+;db $8B ; $24 - Light Style, $8B - Dark Style
 ;;Portal indicator in dark world map
-;org $8ABFBB ; Bank0a.asm:1005 (LDA $008A : CMP.b #$40 : BCS BRANCH_BETA)
+;org $8ABFBB ; Bank0a.asm:1005 (LDA $008A : CMP.b $40 : BCS BRANCH_BETA)
 ;db $90 ;$90 (BCC) - Show in Dark World, $B0 (BCS) normal
 ;;--------------------------------------------------------------------------------
 ;;Vortexes
 ;org $85AF79 ; PC 0x2AF79 (sprite_warp_vortex.asm:18) (BNE)
-;db $F0 ; #$D0 - Light Only (Default), #$F0 - Dark Only
+;db $F0 ; $D0 - Light Only (Default), $F0 - Dark Only
 ;org $8DB3C5 ; PC 0x6B3C5 (sprite_properties.asm:119) ($C4)
-;db $C6 ; #$C4 - Blue Portal, #$C6 - Red Portal
+;db $C6 ; $C4 - Blue Portal, $C6 - Red Portal
 ;;--------------------------------------------------------------------------------
 ;;Duck
 ;org $87A3F4 ; PC 0x3A3F4 (Bank07.asm:5772) (BNE)
-;db $F0 ; #$D0 - Light Only (Default), #$F0 - Dark Only
+;db $F0 ; $D0 - Light Only (Default), $F0 - Dark Only
 ;org $82E849 ; PC 0x16849 (Bank02.asm:11641)
 ;;dw $0003, $0016, $0018, $002C, $002F, $0030, $003B, $003F ; Light World Flute Spots
 ;dw $0043, $0056, $0058, $006C, $006F, $0070, $007B, $007F ; Dark World Flute Spots
@@ -1450,18 +1450,18 @@ db $04
 ;;--------------------------------------------------------------------------------
 ;;Mirror
 ;org $87A943 ; PC 0x3A943 (Bank07.asm:6548) (BNE)
-;db $80 ; #$D0 - Dark-to-Light (Default), #$F0 - Light-to-Dark, #$80 - Both Directions, #$42 - Disabled
+;db $80 ; $D0 - Dark-to-Light (Default), $F0 - Light-to-Dark, $80 - Both Directions, $42 - Disabled
 ;;--------------------------------------------------------------------------------
 ;;Residual Portal
 ;org $87A96D ; PC 0x3A96D (Bank07.asm:6578) (BEQ)
-;db $D0 ; #$F0 - Light Side (Default), #$D0 - Dark Side
+;db $D0 ; $F0 - Light Side (Default), $D0 - Dark Side
 ;;--------------------------------------------------------------------------------
 ;org $88D40C ; PC 0x4540C (ancilla_morph_poof.asm:48) (BEQ)
-;db $D0 ; #$F0 - Light Side (Default), #$D0 - Dark Side
+;db $D0 ; $F0 - Light Side (Default), $D0 - Dark Side
 ;;--------------------------------------------------------------------------------
 ;; Spawn
 ; org $8280a6 ; <- Bank02.asm : 257 (LDA $7EF3CA : BEQ .inLightWorld)
-;db $D0 ; #F0 - default to light (Default), #$D0 - Default to dark
+;db $D0 ; F0 - default to light (Default), $D0 - Default to dark
 ;;--------------------------------------------------------------------------------
 ;org $86B2AA ; <- 332AA sprite_smithy_bros.asm : 152 (JSL Sprite_ShowSolicitedMessageIfPlayerFacing)
 ;JSL Sprite_ShowMessageFromPlayerContact ; Inverted uses Sprite_ShowMessageFromPlayerContact
@@ -1555,7 +1555,7 @@ db $00 ; $00 = Player picks name (default) - $01 = Use StaticFileName (initsramt
 ; d - 0=Check Door - 1=Skip Door Check
 ; a - 0=Shop/TakeAny - 1=TakeAll
 ; v - 0=normal vram, 1= alt vram
-; qq - # of items for sale
+; qq -  of items for sale
 
 ;shopkeeper_config - ppp- -sss
 ; ppp - palette
@@ -2664,17 +2664,17 @@ db $01, $01, $00, $01, $02, $01, $06, $03, $03, $02, $01, $01, $04, $04, $00, $0
 org $B0F020
 HUDHeartColors: ; PC 0x187020
 .index          ; $00 = Red | $01 = Blue | $02 = Green | $03 = Yellow
-dw #$0000
+dw $0000
 .masks_game_hud    ; PC 0x187022
-dw #$0400          ; Red
-dw #$0C00          ; Blue
-dw #$1C00          ; Green
-dw #$0800          ; Yellow
+dw $0400          ; Red
+dw $0C00          ; Blue
+dw $1C00          ; Green
+dw $0800          ; Yellow
 .masks_file_select ; PC 0x18702A
-dw #$0400          ; Red
-dw #$0C00          ; Blue
-dw #$1800          ; Green
-dw #$0800          ; Yellow
+dw $0400          ; Red
+dw $0C00          ; Blue
+dw $1800          ; Green
+dw $0800          ; Yellow
 
 org $B0F032 ; PC 0x187032
 RomSpeed:

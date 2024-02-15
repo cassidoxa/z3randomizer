@@ -65,7 +65,7 @@ incsrc overworldmap.asm ; Overwrites some code in bank $8A
 
 org $9C8000 ; text tables for translation
 incbin "data/i18n_en.bin"
-warnpc $9CF356
+assert pc() <= $9CF356
 
 org $A08000 ; bank $20
 incsrc itemdowngrade.asm
@@ -102,22 +102,22 @@ incsrc doorframefixes.asm
 incsrc music.asm
 incsrc roomloading.asm
 incsrc icepalacegraphics.asm
-warnpc $A18000
+assert pc() <= $A18000
 
 org $A18000 ; static mapping area
 incsrc framehook.asm
-warnpc $A186B0
+assert pc() <= $A186B0
 org $A186B0 ; static mapping area, do not move
 incsrc hud.asm
-warnpc $A18800
+assert pc() <= $A18800
 org $A18800 ; static mapping area
-warnpc $A19000
+assert pc() <= $A19000
 org $A1A000 ; static mapping area. Referenced by front end. Do not move.
 incsrc invertedstatic.asm
-warnpc $A1A100
+assert pc() <= $A1A100
 org $A1B000
 incsrc failure.asm
-warnpc $A1FF00
+assert pc() <= $A1FF00
 org $A1FF00 ; static mapping area
 incsrc init.asm
 
@@ -126,7 +126,7 @@ ItemReceiptGraphicsROM:
 ; we need some empty space here so that 0000 can mean nothing
 fillbyte $00 : fill 32
 incbin "data/customitems.4bpp"
-warnpc $A2B000
+assert pc() <= $A2B000
 org $A2B000
 incsrc itemdatatables.asm ; Statically mapped
 incsrc decompresseditemgraphics.asm
@@ -170,7 +170,7 @@ incsrc msu.asm
 incsrc dungeonmap.asm
 incsrc hextodec.asm
 incsrc textrenderer.asm
-warnpc $A58000
+assert pc() <= $A58000
 
 org $A88000
 ; Key drop, pots
@@ -187,62 +187,62 @@ incsrc spc.asm
 org $B18000 ; bank $31
 GFX_Mire_Bombos:
 incbin "data/99ff1_bombos.gfx"
-warnpc $B18800
+assert pc() <= $B18800
 
 org $B18800
 GFX_Mire_Quake:
 incbin "data/99ff1_quake.gfx"
-warnpc $B19000
+assert pc() <= $B19000
 
 org $B19000
 GFX_TRock_Bombos:
 incbin "data/a6fc4_bombos.gfx"
-warnpc $B19800
+assert pc() <= $B19800
 
 org $B19800
 GFX_TRock_Ether:
 incbin "data/a6fc4_ether.gfx"
-warnpc $B1A000
+assert pc() <= $B1A000
 
 org $B1A000
 GFX_HUD_Items:
 incbin "data/c2807_v4.gfx"
-warnpc $B1A800
+assert pc() <= $B1A800
 
 org $B1B000
 GFX_HUD_Main:
 incbin "data/c2e3e.gfx"
-warnpc $B1B800
+assert pc() <= $B1B800
 
 org $B1C000
 IcePalaceFloorGfx:
 incbin "data/ice_palace_floor.bin"
-warnpc $B1C801
+assert pc() <= $B1C801
 
 org $B1C800
 Damage_Table:
 incbin "data/damage_table.bin"
-warnpc $B1D001
+assert pc() <= $B1D001
 
 org $B1D000
 FileSelectNewGraphics:
 incbin "data/fileselectgfx.2bpp"
-warnpc $B1E001
+assert pc() <= $B1E001
 
 org $B1E000
 InvertedCastleHole: ;address used by front end. DO NOT MOVE!
 incbin "data/sheet73.gfx"
-warnpc $B1E501
+assert pc() <= $B1E501
 
 org $B38000
 GFX_HUD_Palette:
 incbin "data/hudpalette.pal"
-warnpc $B38041
+assert pc() <= $B38041
 
 org $B39000
 ExpandedTrinexx:
 incbin "data/sheet178.gfx"
-warnpc $B39600
+assert pc() <= $B39600
 
 org $B39600
 BossMapIconGFX:
@@ -270,21 +270,21 @@ incsrc externalhooks.asm
 ;================================================================================
 org $919100 ; PC 0x89100
 incbin "data/map_icons.gfx"
-warnpc $919401
+assert pc() <= $919401
 ;================================================================================
 org $9BB1E0
 incsrc custompalettes.asm
-warnpc $9BB880
+assert pc() <= $9BB880
 ;================================================================================
 org $AF8000 ; PC 0x178000
 Static_RNG: ; 4096 bytes of static RNG
 incsrc staticrng.asm
-warnpc $AF9000
+assert pc() <= $AF9000
 ;================================================================================
 org $AF9000
 incsrc tournament.asm
 incsrc eventdata.asm
-warnpc $B08000
+assert pc() <= $B08000
 ;================================================================================
 ;Bank Map
 ;$20 Code Bank

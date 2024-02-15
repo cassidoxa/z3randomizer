@@ -1,13 +1,13 @@
 ;===================================================================================================
 ; LEAVE THIS HERE FOR PHP WRITES
 ;===================================================================================================
-table "data/creditscharmapbighi.txt"
+incsrc "data/creditscharmapbighi.txt"
 YourSpriteCreditsHi:
 db 2
 db 55
 db "                            " ; $238002
 
-table "data/creditscharmapbiglo.txt"
+incsrc "data/creditscharmapbiglo.txt"
 YourSpriteCreditsLo:
 db 2
 db 55
@@ -15,46 +15,52 @@ db "                            " ; $238020
 
 !FEATURE_PATREON_SUPPORTERS ?= 0
 
-table "data/creditscharmapbighi.txt"
+incsrc "data/creditscharmapbighi.txt"
 PatronCredit1Hi:
 db 2
 db 55
 db "                            " ; $23803E
 
-table "data/creditscharmapbiglo.txt"
+incsrc "data/creditscharmapbiglo.txt"
 PatronCredit1Lo:
 db 2
 db 55
 db "                            " ; $23805C
 
-table "data/creditscharmapbighi.txt"
+incsrc "data/creditscharmapbighi.txt"
 PatronCredit2Hi:
 db 2
 db 55
 db "                            " ; $23807A
 
-table "data/creditscharmapbiglo.txt"
+incsrc "data/creditscharmapbiglo.txt"
 PatronCredit2Lo:
 db 2
 db 55
 db "                            " ; $238098
 
-table "data/creditscharmapbighi.txt"
+incsrc "data/creditscharmapbighi.txt"
 PatronCredit3Hi:
 db 2
 db 55
 db "                            " ; $2380B6
 
-table "data/creditscharmapbiglo.txt"
+incsrc "data/creditscharmapbiglo.txt"
 PatronCredit3Lo:
 db 2
 db 55
 db "                            " ; $2380D4
 
 ;===================================================================================================
+CreditsEmptyLine:
+	db $00, $01, $9F
+
+CreditsLineBlank:
+	db $FF
 
 CreditsLineTable:
-	fillword CreditsLineBlank : fill 800
+	;fillword CreditsLineBlank : fill 800
+	fillword $8413 : fill 800
 
 ;===================================================================================================
 
@@ -64,7 +70,7 @@ CreditsLineTable:
 
 macro smallcredits(text, color)
 	!CLINE #= !CLINE+1
-	table "data/creditscharmapsmall_<color>.txt"
+	incsrc "data/creditscharmapsmall_<color>.txt"
 
 	?line:
 		db (32-(?end-?text))/2
@@ -82,7 +88,7 @@ endmacro
 ;---------------------------------------------------------------------------------------------------
 macro bigcredits(text)
 	!CLINE #= !CLINE+1
-	table "data/creditscharmapbighi.txt"
+	incsrc "data/creditscharmapbighi.txt"
 
 	?line_top:
 		db (32-(?end-?text))/2
@@ -96,7 +102,7 @@ macro bigcredits(text)
 	pullpc
 
 
-	table "data/creditscharmapbiglo.txt"
+	incsrc "data/creditscharmapbiglo.txt"
 	?line_bottom:
 		db (32-(?end-?text))/2
 		db 2*(?end-?text)-1
@@ -114,7 +120,7 @@ endmacro
 
 macro bigcreditsleft(text)
 	!CLINE #= !CLINE+1
-	table "data/creditscharmapbighi.txt"
+	incsrc "data/creditscharmapbighi.txt"
 
 	?line_top:
 		db 2
@@ -128,7 +134,7 @@ macro bigcreditsleft(text)
 	pullpc
 
 
-	table "data/creditscharmapbiglo.txt"
+	incsrc "data/creditscharmapbiglo.txt"
 	?line_bottom:
 		db 2
 		db 2*(?end-?text)-1
@@ -166,14 +172,6 @@ macro addarbline(l)
 endmacro
 
 ;===================================================================================================
-
-CreditsEmptyLine:
-	db $00, $01, $9F
-
-CreditsLineBlank:
-	db $FF
-
-;---------------------------------------------------------------------------------------------------
 
 %emptyline()
 %smallcredits("ORIGINAL GAME STAFF", "yellow")

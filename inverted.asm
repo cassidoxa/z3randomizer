@@ -239,27 +239,27 @@ JML.l MirrorBonk_BranchGamma
 
 .bonkRectanglesTable
    ;X1     X2      Y1      Y2
-dw #$0290, #$02C8, #$0CA8, #$0CF8 ;Desert checkerboard cave2
-dw #$05F8, #$0A00, #$0600, #$0660 ;Castle Top
-dw #$05B0, #$06A0, #$0660, #$0830 ;Castle Top
-dw #$06A0, #$0770, #$0660, #$0680 ;Castle Top
-dw #$0880, #$0950, #$0660, #$0688 ;Castle Top
-dw #$0950, #$0A00, #$0660, #$0830 ;Castle Top
-dw #$07B8, #$0848, #$08E0, #$0970 ;Castle Bridge
-dw #$02EF, #$0321, #$0C16, #$0CA2 ;Desert (Mazeblock cave)
-dw #$0048, #$008F, #$0B10, #$0B48 
-dw #$0358, #$0440, #$0E08, #$0ED0 
-dw #$03B8, #$0420, #$0ED0, #$0FE8 
-dw #$0360, #$03C8, #$0EC0, #$0F20 
-dw #$0C68, #$0D00, #$0D78, #$0DC8 
-dw #$0F40, #$0F70, #$0618, #$0640 ;Pod/eastern entrance
-dw #$0E28, #$0E78, #$0298, #$02E8 
-dw #$0F10, #$0F80, #$01F8, #$0238 
-dw #$0AA8, #$0B90, #$02C8, #$0320 
-dw #$0D18, #$0D80, #$0040, #$0070 
-dw #$0EF0, #$0F30, #$0120, #$0160 
-dw #$0AD0, #$0B00, #$0B50, #$0B70 ;Bridge Left
-dw #$0B30, #$0B60, #$0B50, #$0B70 ;Bridge Right
-dw #$0678, #$06F0, #$0010, #$0040 ;Ether Island
-dw #$02A8, #$02E8, #$0C90, #$0CC0 ;Desert Checkerboard Cave3
+dw $0290, $02C8, $0CA8, $0CF8 ;Desert checkerboard cave2
+dw $05F8, $0A00, $0600, $0660 ;Castle Top
+dw $05B0, $06A0, $0660, $0830 ;Castle Top
+dw $06A0, $0770, $0660, $0680 ;Castle Top
+dw $0880, $0950, $0660, $0688 ;Castle Top
+dw $0950, $0A00, $0660, $0830 ;Castle Top
+dw $07B8, $0848, $08E0, $0970 ;Castle Bridge
+dw $02EF, $0321, $0C16, $0CA2 ;Desert (Mazeblock cave)
+dw $0048, $008F, $0B10, $0B48 
+dw $0358, $0440, $0E08, $0ED0 
+dw $03B8, $0420, $0ED0, $0FE8 
+dw $0360, $03C8, $0EC0, $0F20 
+dw $0C68, $0D00, $0D78, $0DC8 
+dw $0F40, $0F70, $0618, $0640 ;Pod/eastern entrance
+dw $0E28, $0E78, $0298, $02E8 
+dw $0F10, $0F80, $01F8, $0238 
+dw $0AA8, $0B90, $02C8, $0320 
+dw $0D18, $0D80, $0040, $0070 
+dw $0EF0, $0F30, $0120, $0160 
+dw $0AD0, $0B00, $0B50, $0B70 ;Bridge Left
+dw $0B30, $0B60, $0B50, $0B70 ;Bridge Right
+dw $0678, $06F0, $0010, $0040 ;Ether Island
+dw $02A8, $02E8, $0C90, $0CC0 ;Desert Checkerboard Cave3
 .tableEnd

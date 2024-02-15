@@ -38,7 +38,7 @@ HexToDec:
 
 	REP #$20
 
-	LDA.l #$0000
+	LDA.w #$0000
 	STA.l HexToDecDigit1
 
 	PLA

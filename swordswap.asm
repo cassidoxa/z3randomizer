@@ -195,5 +195,5 @@ CheckMedallionSword:
 		LDA.b #$02 ; Pretend we have master sword
 		RTL
 .medallion_type
-db #$0F, #$10, #$11
+db $0F, $10, $11
 ;================================================================================

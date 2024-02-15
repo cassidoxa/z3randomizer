@@ -283,22 +283,19 @@ WriteVRAMBlock:
         LDX.w GFXStripes ; get pointer
         AND.w #$7F : STA.w GFXStripes+2, X : INX #2 ; set destination
         PLA : ASL : AND.w #$3FFF : STA.w GFXStripes+2, X : INX #2 ; set length
-
         PHX
-                TYX ; set X to source
-                PHA
-                        TXA : !ADD #$1002 : TAY ; set Y to dest
-                PLA
-                ;A is already the value we need for mvn
-                MVN $7F7E ; currently we transfer from our buffers in 7F to the vram buffer in 7E
-
-                !ADD 1, s ; add the length in A to the stack pointer on the top of the stack
+        TYX ; set X to source
+        PHA
+        TXA : !ADD #$1002 : TAY ; set Y to dest
+        PLA
+        ;A is already the value we need for mvn
+        MVN $7E, $7F ; currently we transfer from our buffers in 7F to the vram buffer in 7E
+        !ADD 1, s ; add the length in A to the stack pointer on the top of the stack
         PLX : TAX ; pull and promptly ignore, copying the value we just got over it
-
         SEP #$20 ; set 8-bit accumulator
-                LDA.b #$FF : STA.w GFXStripes+$02, X
-                STX.w GFXStripes
-                LDA.b #01 : STA.w NMISTRIPES
+        LDA.b #$FF : STA.w GFXStripes+$02, X
+        STX.w GFXStripes
+        LDA.b #01 : STA.w NMISTRIPES
         REP #$20 ; set 16-bit accumulator
 RTL
 ;--------------------------------------------------------------------------------

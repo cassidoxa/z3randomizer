@@ -435,7 +435,7 @@ base off
 ; Assertions
 ;================================================================================
 macro assertSRAM(label, address)
-  assert <label> = <address>, "<label> labeled at incorrect address."
+  assert <label> == <address>, "<label> labeled at incorrect address."
 endmacro
 
 ;================================================================================

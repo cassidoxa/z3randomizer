@@ -612,7 +612,7 @@ MiniGameTimeFinal = $7FFE04        ; Final mini game time. 32 bits.
 ; RAM Assertions
 ;--------------------------------------------------------------------------------
 macro assertRAM(label, address)
-  assert <label> = <address>, "<label> labeled at incorrect address."
+  assert <label> == <address>, "<label> labeled at incorrect address."
 endmacro
 
 %assertRAM(Scrap00, $7E0000)

@@ -301,7 +301,7 @@ Shopkeeper_DrawMerchant:
 	CMP.b #$04 : BNE + : RTS : +
 ;--------------------------------------------------------------------------------
 Shopkeeper_DrawMerchant_Type0:
-%DrawMerchant(#$00, #$10, #$10)
+%DrawMerchant($00, $10, $10)
 ;--------------------------------------------------------------------------------
 Shopkeeper_DrawMerchant_Type1:
 	LDA.b #$01 : STA.b Scrap06 ; request 1 OAM slot
@@ -325,10 +325,10 @@ dw 0, 0 : db $46, $0A, $00, $02
 dw 0, 0 : db $46, $4A, $00, $02
 ;--------------------------------------------------------------------------------
 Shopkeeper_DrawMerchant_Type2:
-%DrawMerchant(#$84, #$10, #$40)
+%DrawMerchant($84, $10, $40)
 ;--------------------------------------------------------------------------------
 Shopkeeper_DrawMerchant_Type3:
-%DrawMerchant(#$8E, #$10, #$40)
+%DrawMerchant($8E, $10, $40)
 ;--------------------------------------------------------------------------------
 Shopkeeper_SetupHitboxes:
 	PHX : PHY : PHP
@@ -420,7 +420,7 @@ Shopkeeper_BuyItem:
 	PLY : PLX
 RTS
 Shopkeeper_ItemMasks:
-db #$01, #$02, #$04
+db $01, $02, $04
 ;--------------------
 Setup_ShopItemCollisionHitbox:
 ;The complications with XBA are to handle the fact that nintendo likes to store
@@ -611,9 +611,9 @@ Shopkeeper_DrawNextItem:
 RTS
 ;--------------------------------------------------------------------------------
 .item_offsets_idx
-dw #.item_offsets_1
-dw #.item_offsets_2
-dw #.item_offsets_3
+dw .item_offsets_1
+dw .item_offsets_2
+dw .item_offsets_3
 .item_offsets_1
 dw 8, 40
 .item_offsets_2
@@ -663,15 +663,15 @@ Shopkeeper_DrawNextPrice:
         PLB
 RTS
 .price_columns_idx
-dw #.price_columns_1
-dw #.price_columns_2
-dw #.price_columns_3
+dw .price_columns_1
+dw .price_columns_2
+dw .price_columns_3
 .price_columns_1
-db #$00, #$FF
+db $00, $FF
 .price_columns_2
-db #$00, #$80, #$80, $FF
+db $00, $80, $80, $FF
 .price_columns_3
-db #$00, #$60, #$60, #$90, #$90, $FF
+db $00, $60, $60, $90, $90, $FF
 ;--------------------------------------------------------------------------------
 RequestItemOAM:
         PHX : PHY : PHA

@@ -20,7 +20,7 @@ TitleCardFix:
 .exit
 	JML $8CC3D2
 
-warnpc $8CC2B6
+assert pc() <= $8CC2B6
 
 ;===================================================================================================
 ; THESE MOTHERFUCKERS

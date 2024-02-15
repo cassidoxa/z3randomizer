@@ -15,7 +15,7 @@ CheckZSNES:
 
 pushtable
 
-table "data/bsodencode.txt"
+incsrc "data/bsodencode.txt"
 
 ; Uncomment this to force a crash to test message
 ; pushpc : org $008132 : db 0 : pullpc

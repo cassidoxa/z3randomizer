@@ -1,21 +1,15 @@
 MSUCode = $00277E
 
-;@ pushpc
-
 
 ; Change track 15 (unused) to point to 13 (Death Mountain) so dark woods can be track 15
 ; Bank 1
 org $1A9F15 ; PC 0x0D1F15 ; SPC $D01C
 	dw $2B00	; Set track 15 pointer to track 13's data
 
-pullpc
-
 ;---------------------------------------------------------------------------------------------------
 
 arch spc700
 
-;@ pushpc
-;@ pushbase
 org $19FE41 ; SPC 0A73
 	JMP MSUCode
 
@@ -66,9 +60,6 @@ SpecialCommand_Mute:
 	MOV $F4,$00
 	RET
 
-warnpc $1A9B91
-
-;@ pullbase
-;@ pullpc
+assert pc() <= $1A9B91
 
 arch 65816

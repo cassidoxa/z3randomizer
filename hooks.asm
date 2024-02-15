@@ -61,7 +61,7 @@ org $00FFEE : dw IRQBounce
 org $8098AB
 NMIBounce: JML.l $8080C9
 IRQBounce: JML.l $8082D8
-warnpc $8098C0
+assert pc() <= $8098C0
 
 ;================================================================================
 ; BSOD for BRK and COP opcodes
@@ -514,7 +514,7 @@ PreventEnterOnBonk_BRANCH_IX:
 ; Crystals Mode
 ;--------------------------------------------------------------------------------
 org $899B7F ; <- ancilla_init.asm : 4136 (LDA $7EF37A : AND.b #$7F : CMP.b #$7F)
-JSL CheckTowerOpen : BCC $899B6D
+JSL CheckTowerOpen : BCC AncillaAdd_WaterfallSplash_exit
 ;--------------------------------------------------------------------------------
 org $88CE0C ; <- 44E0C - ancilla_break_tower_seal.asm : 168 (BEQ #$03 : JSR BreakTowerSeal_ExecuteSparkles : LDX.b #$06)
 JML GetRequiredCrystalsForTower : NOP #3
@@ -1112,7 +1112,7 @@ JSR.w RestoreNormalMenu ; (short)
 RTL
 NOP #3
 
-warnpc $8DDF49
+assert pc() <= $8DDF49
 org $8DDF49 ; <- 6DF49 - equipment.asm : 497
 _equipment_497: ; LDA $F4 : AND.b #$08 : BEQ .notPressingUp - NO BUTTON CAPTURE
 org $8DDF88 ; <- 6DF88 - equipment.asm : 544
@@ -1257,7 +1257,7 @@ JSL MedallionTrigger_Bombos : NOP
 org $88ACC8 ; <- 42CC8 - ancilla_ether_spell.asm : 350
 JSL MedallionTrigger_Ether
 JMP _ancilla_ether_spell_363
-warnpc $88ACE6
+assert pc() <= $88ACE6
 org $88ACE6 ; <- 42CE6 - ancilla_quake_spell.asm : 363
 _ancilla_ether_spell_363:
 ;--------------------------------------------------------------------------------
@@ -1267,7 +1267,7 @@ JMP _ancilla_quake_spell_83
 Ancilla_CheckIfEntranceTriggered:
 	JSR $F856
 RTL
-warnpc $88B708
+assert pc() <= $88B708
 org $88B708 ; <- 43708 - ancilla_quake_spell.asm : 83
 _ancilla_quake_spell_83:
 
@@ -1418,7 +1418,7 @@ JSL DrawHUDDungeonItems
 org $8DFA96 ; <- 6FA96 - headsup_display.asm : 626 (LDX.w #.hud_tilemap)
 LDX.w #HUD_TileMap
 org $8DFA9C ; <- 6FA9C - headsup_display.asm : 629 (MVN $0D, $7E ; $Transfer 0x014A bytes from $6FE77 -> $7EC700)
-MVN $A17E
+MVN $7E, $A1
 ;--------------------------------------------------------------------------------
 org $8DFB1F : JSL CheckHUDSilverArrows
 org $8DFB29 : BRA UpdateHUDBuffer_update_item_check_arrows
@@ -1443,7 +1443,7 @@ INC.w UpdateHUDFlag
 JSR.w RebuildHUD
 JSR.w UpdateEquippedItem
 RTS
-warnpc $8E8000
+assert pc() <= $8E8000
 ;--------------------------------------------------------------------------------
 org $8DEDE8
 JSL.l DrawHeartPiecesMenu : BRA DrawEquipment_in_a_dungeon

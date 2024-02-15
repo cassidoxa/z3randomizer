@@ -1294,7 +1294,7 @@ HDMA7LINECOUNT = $00437A
 
 ;===================================================================================================
 macro assertREG(label, address)
-  assert <label> = <address>, "<label> labeled at incorrect address."
+  assert <label> == <address>, "<label> labeled at incorrect address."
 endmacro
 
 %assertREG(MSUSTATUS, $2000)

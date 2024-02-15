@@ -3,7 +3,7 @@
 ; Scrap08 use for dpScratch/MXResult (lower 32 of dpScratch)
 
 CryptoDelta:
-dd #$9e3779b9
+dd $9e3779b9
 
 ; For use in an unrolled loop
 macro LSR32Single(value)
